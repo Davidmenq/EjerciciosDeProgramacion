@@ -90,8 +90,24 @@ console.log(sumaProductosEnStock);
 
 // 8. Ejercicio combinado:
 // Dado un arreglo de nombres, utiliza el método `map` para crear un nuevo arreglo que contenga solo los nombres que comienzan con la letra "A". Luego, utiliza el método `reduce` para concatenar todos los nombres en una sola cadena separada por comas.
+const arrayEjercicio8 = ['Antonio', 'Edwin', 'Alan', 'Javier', 'Sofia', 'Miguel', 'Anita'];
+const newArrayE8 = arrayEjercicio8.map(nombre => (nombre[0] === 'A') ? nombre : ' ');
+const arrayFiltrado = newArrayE8.filter(nombre => nombre !== ' ');
+
+//console.log(newArrayE8);
+console.log(arrayFiltrado.reduce((concatenar, nombre) => concatenar += `, ${nombre}`));
+
 // 9. Ejercicio de bucles:
 // Escribe un bucle que imprima los números del 10 al 1 en la consola, en orden descendente.
+const conteoInverso = () => {
+    let concatenar = '';
+    for (let i = 10; i >= 1; i--) {
+        concatenar+=`numero ${i},`;
+    }
+    return concatenar;
+}
+console.log(conteoInverso());
+
 // 10. Ejercicio de condicionales:
 // Escribe una función que tome un número como argumento y devuelva "Positivo" si el número es mayor que 0, "Negativo" si el número es menor que 0, y "Cero" si el número es igual a 0.
 // 11. Ejercicio de map:
@@ -312,22 +328,22 @@ console.log(contarCaracter5('Hay un gatito en la casa', 'n'));
 
 function contarCaracter6(cadena, caracter) {
     let contador = 0;
-    
-    for (let i = 0; i < cadena.length; i++) {
-      if (cadena[i] === caracter) {
-        contador++;
-      }
-    }
-    
-    return contador;
-  }
-  console.log(contarCaracter6('Hay un gatito en la casa', 'a'));
 
-  function contarCaracter7(cadena, caracter) {
+    for (let i = 0; i < cadena.length; i++) {
+        if (cadena[i] === caracter) {
+            contador++;
+        }
+    }
+
+    return contador;
+}
+console.log(contarCaracter6('Hay un gatito en la casa', 'a'));
+
+function contarCaracter7(cadena, caracter) {
     let caracteres = cadena.split(caracter);
     return caracteres.length - 1;
-  }
-  console.log(contarCaracter7(' Hay un gatito en la casa ', ' '));
+}
+console.log(contarCaracter7(' Hay un gatito en la casa ', ' '));
 
 
 
