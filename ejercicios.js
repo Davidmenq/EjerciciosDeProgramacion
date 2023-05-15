@@ -6,6 +6,7 @@ for (i = 1; i <= 10; i++) {
     console.log(i);
 }
 
+
 // 2. Ejercicio de condicionales:
 // Escribe una función que tome un número como argumento y devuelva "Es par" si el número es par, y "Es impar" si el número es impar.
 const esPar = num => {
@@ -17,6 +18,7 @@ const esPar = num => {
 }
 console.log(esPar(12));
 
+
 // 3. Ejercicio de map:
 // Dado un arreglo de números, utiliza el método `map` para crear un nuevo arreglo que contenga el cuadrado de cada número(sin usar Math.pow()).
 let arregloEjercicio3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -24,6 +26,7 @@ let arregloEjercicio3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const cuadradoDelNumero = arregloEjercicio3.map(num => num ** 2);
 
 console.log(cuadradoDelNumero);
+
 
 // 4. Ejercicio de filter:
 // Dado un arreglo de números, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los números pares.
@@ -33,6 +36,7 @@ const soloNumerosPares = arregloEjercicio4.filter(num => num % 2 === 0);
 
 console.log(soloNumerosPares);
 
+
 // 5. Ejercicio de reduce:
 // Dado un arreglo de números, utiliza el método `reduce` para calcular la suma de todos los elementos del arreglo.
 let arregloEjercicio5 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -40,6 +44,7 @@ let arregloEjercicio5 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const sumaDeTodosLosElementos = arregloEjercicio5.reduce((sumador, num) => sumador += num);
 
 console.log(sumaDeTodosLosElementos);
+
 
 // 6. Ejercicio combinado:
 // Dado un arreglo de palabras, utiliza un bucle y condicionales para crear un nuevo arreglo que contenga solo las palabras que tienen más de 5 caracteres. Luego, utiliza el método `map` para convertir cada palabra en mayúsculas.
@@ -88,6 +93,7 @@ const sumaProductosEnStock = newProduct.reduce((sumador, num) => {
 }, 0);
 console.log(sumaProductosEnStock);
 
+
 // 8. Ejercicio combinado:
 // Dado un arreglo de nombres, utiliza el método `map` para crear un nuevo arreglo que contenga solo los nombres que comienzan con la letra "A". Luego, utiliza el método `reduce` para concatenar todos los nombres en una sola cadena separada por comas.
 const arrayEjercicio8 = ['Antonio', 'Edwin', 'Alan', 'Javier', 'Sofia', 'Miguel', 'Anita'];
@@ -97,39 +103,170 @@ const arrayFiltrado = newArrayE8.filter(nombre => nombre !== ' ');
 //console.log(newArrayE8);
 console.log(arrayFiltrado.reduce((concatenar, nombre) => concatenar += `, ${nombre}`));
 
+
 // 9. Ejercicio de bucles:
 // Escribe un bucle que imprima los números del 10 al 1 en la consola, en orden descendente.
 const conteoInverso = () => {
     let concatenar = '';
     for (let i = 10; i >= 1; i--) {
-        concatenar+=`numero ${i},`;
+        concatenar += `numero ${i},`;
     }
     return concatenar;
 }
 console.log(conteoInverso());
 
+
 // 10. Ejercicio de condicionales:
 // Escribe una función que tome un número como argumento y devuelva "Positivo" si el número es mayor que 0, "Negativo" si el número es menor que 0, y "Cero" si el número es igual a 0.
+const analizarNumero = (num) => (num > 0) ? 'Positivo' : (num < 0) ? 'Negativo' : 'Cero';
+
+console.log(analizarNumero(-0.000005));
+
+
 // 11. Ejercicio de map:
 // Dado un arreglo de palabras, utiliza el método `map` para crear un nuevo arreglo que contenga la longitud de cada palabra.
+let palabrasEjercicio11 = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+
+const longitudDePalabras = palabrasEjercicio11.map(word => word.length);
+
+console.log(longitudDePalabras);
+
+
 // 12. Ejercicio de filter:
 // Dado un arreglo de números, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los números mayores que 5.
+let arregloEjercicio12 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const mayoresDeCinco = arregloEjercicio12.filter(num => num > 5);
+
+console.log(mayoresDeCinco);
+
+
 // 13. Ejercicio de reduce:
 // Dado un arreglo de números, utiliza el método `reduce` para calcular el producto de todos los elementos del arreglo.
+const arregloEjercicio13 = [2, 3, 2, 3, 1];
+const productoNumeros = arregloEjercicio13.reduce((multiplicar, num) => {
+    return multiplicar *= num;
+}, 1);
+
+console.log(productoNumeros);
+
+
 // 14. Ejercicio combinado:
 // Dado un arreglo de objetos que representan estudiantes, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los estudiantes que tienen una calificación mayor o igual a 80. Luego, utiliza el método `map` para crear un nuevo arreglo que contenga solo los nombres de esos estudiantes.
+const estudiantes = [
+    {
+        nombre: 'David',
+        calificacion: 100,
+    },
+    {
+        nombre: 'Miguel',
+        calificacion: 80,
+    },
+    {
+        nombre: 'Anita',
+        calificacion: 85,
+    },
+    {
+        nombre: 'Juan Carlos',
+        calificacion: 30,
+    }
+]
+
+const mayorDeOchenta = estudiantes.filter(estudiante => estudiante.calificacion >= 80);
+const nombresEstudiantes = mayorDeOchenta.map(estudiante => (estudiante.nombre !== '') ? estudiante.nombre : '');
+
+console.log(nombresEstudiantes);
+
+
 // 15. Ejercicio combinado:
 // Dado un arreglo de palabras, utiliza el método `filter` para crear un nuevo arreglo que contenga solo las palabras que contienen la letra "a". Luego, utiliza el método `map` para convertir cada palabra en minúsculas.
+const palabrasEjercicio15 = ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'];
+const soloLetraA = palabrasEjercicio15.filter(word => word.includes('a') ? word : '');
+
+const convertirMinusculas = soloLetraA.map(word => word.toLowerCase());
+console.log(convertirMinusculas);
+
+
 // 16. Ejercicio combinado:
 // Dado un arreglo de objetos que representan libros, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los libros cuyo autor sea "J.K. Rowling". Luego, utiliza el método `reduce` para calcular la suma de las páginas de todos los libros seleccionados.
+const librosE16 = [
+    {
+        titulo: 'La larga marcha',
+        autor: 'Stephen King',
+        paginas: 385
+    },
+    {
+        titulo: 'Una vacante imprevista',
+        autor: 'J.K. Rowling',
+        paginas: 400
+    },
+    {
+        titulo: 'Anticandidatos',
+        autor: 'Carlos Melendez',
+        paginas: 250
+    },
+    {
+        titulo: 'Harry Potter y la piedra filosofal',
+        autor: 'J.K. Rowling',
+        paginas: 700
+    }
+]
+
+const libroPorAutor = (libros, escrito) => {
+    return libros.filter((libro) => libro.autor == escrito);
+}
+const resultadoLibro = libroPorAutor(librosE16, 'J.K. Rowling')
+//console.log(resultadoLibro);
+const sumaPaginas = resultadoLibro.reduce((sumador, numPaginas) => {
+    return sumador += numPaginas.paginas;
+}, 0)
+
+console.log(sumaPaginas);
+
+
 // 17. Ejercicio de bucles:
 // Escribe un bucle que imprima los números pares del 1 al 20 en la consola.
+const unoAlVeinte = () => {
+    let contadorE17 = 1;
+    let concatenarE17 = '';
+    do {
+        concatenarE17 += `| ${contadorE17} |`;
+        contadorE17++;
+    } while (contadorE17 <= 20);
+    return concatenarE17;
+}
+
+console.log(unoAlVeinte());
+
+
 // 18. Ejercicio de condicionales:
 // Escribe una función que tome una cadena como argumento y devuelva "Es una frase" si la cadena contiene espacios en blanco, y "Es una palabra" si la cadena no contiene espacios en blanco.
+const evaluarCadena = cadena => (cadena.includes(' ') ? 'Es una frase' : 'Es una palabra');
+
+console.log(evaluarCadena('Hola amigo'));
+
+
 // 19. Ejercicio de map:
 // Dado un arreglo de nombres, utiliza el método `map` para crear un nuevo arreglo que contenga solo los nombres en mayúsculas.
+const arrayE19 = ['Antonio', 'EDWIN', 'Alan', 'Javier', 'SOFIA', 'Miguel', 'ANA'];
+
+const palabrasMayusculas = arrayE19.map(
+    word => (word === word.toUpperCase()) ? word : ''
+);
+const soloNombresMayusculas = palabrasMayusculas.filter(word => word!=='');
+console.log(soloNombresMayusculas);
+
+
 // 20. Ejercicio de filter:
 // Dado un arreglo de números, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los números impares.
+const arregloE20 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const numerosImpares = arregloE20.filter(num => (num%2 !== 0));
+console.log(numerosImpares);
+
+
+
+
 // 21. Ejercicio de reduce:
 // Dado un arreglo de palabras, utiliza el método `reduce` para calcular la cantidad total de caracteres de todas las palabras en el arreglo.
 // 22. Ejercicio combinado:
