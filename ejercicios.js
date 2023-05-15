@@ -265,18 +265,119 @@ const numerosImpares = arregloE20.filter(num => (num%2 !== 0));
 console.log(numerosImpares);
 
 
-
-
 // 21. Ejercicio de reduce:
 // Dado un arreglo de palabras, utiliza el método `reduce` para calcular la cantidad total de caracteres de todas las palabras en el arreglo.
+const palabrasE21 = ['Lunes', 'Martes', 'Miercoles'];
+const totalCaracteres = palabrasE21.reduce((sumador,word) =>{
+    return sumador+=word.length;
+},0);
+console.log(totalCaracteres);
+
+
 // 22. Ejercicio combinado:
 // Dado un arreglo de objetos que representan productos, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los productos cuyo precio sea mayor a $50. Luego, utiliza el método `map` para crear un nuevo arreglo que contenga solo los nombres de esos productos.
+const productosE22 = [
+    {
+        producto: 'bicicleta',
+        precio: 3000,
+        stock: true
+    },
+    {
+        producto: 'reflectante',
+        precio: 10,
+        stock: false
+    },
+    {
+        producto: 'llanta',
+        precio: 200,
+        stock: true
+    },
+    {
+        producto: 'llave hexagonal',
+        precio: 50,
+        stock: true
+    }
+]
+const mayorDeCincuenta=productosE22.filter(producto=>producto.precio>50);
+const nombresDeProductos= mayorDeCincuenta.map(name=>name.producto);
+console.log(nombresDeProductos);
+
+
 // 23. Ejercicio combinado:
 // Dado un arreglo de números, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los números que sean múltiplos de 3. Luego, utiliza el método `reduce` para calcular la suma de los números seleccionados.
+const arregloE23 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const multiplosDeTres = arregloE23.filter(num => num%3 === 0);
+const sumaMultiplosDeTres= multiplosDeTres.reduce((sumador,num)=>{
+    return sumador+=num;
+},0);
+console.log(sumaMultiplosDeTres);
+
+
 // 24. Ejercicio combinado:
 // Dado un arreglo de objetos que representan estudiantes, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los estudiantes que tienen una calificación promedio mayor o igual a 90. Luego, utiliza el método `reduce` para calcular el promedio de las calificaciones de los estudiantes seleccionados.
+const estudiantesE24 = [
+    {
+        nombre: 'David',
+        calificacion1: 100,
+        calificacion2: 96,
+        calificacion3: 98
+    },
+    {
+        nombre: 'Miguel',
+        calificacion1: 60,
+        calificacion2: 96,
+        calificacion3: 50
+    },
+    {
+        nombre: 'Anita',
+        calificacion1: 70,
+        calificacion2: 60,
+        calificacion3: 80
+    },
+    {
+        nombre: 'Juan Carlos',
+        calificacion1: 90,
+        calificacion2: 90,
+        calificacion3: 90
+    }
+]
+
+const mayorIgualDeNoventa = estudiantesE24.filter(estudiante => {
+    return (estudiante.calificacion1+estudiante.calificacion2+estudiante.calificacion3)/3 >=90;
+})
+//console.log(mayorIgualDeNoventa);//filtrado estudiantes con promedio >=90
+
+const promedioAlumno = mayorIgualDeNoventa.map(estudiante => {
+    let calPromedio = (estudiante.calificacion1+estudiante.calificacion2+estudiante.calificacion3)/3;
+    return {...estudiante, promedio: calPromedio};
+})
+//console.log(promedioAlumno); //agregar propiedad promedio
+
+const promedioGrupo = (promedioAlumno.reduce((sumador,nota) =>{
+    return sumador+=nota.promedio;
+},0))/promedioAlumno.length;
+//console.log(promedioAlumno.length); // calculo del promedio del grupo
+console.log(promedioGrupo);
+
+
 // 25. Ejercicio de bucles:
 // Escribe un bucle que imprima la serie de Fibonacci hasta el décimo término. (La serie de Fibonacci comienza con 0 y 1, y cada término siguiente es la suma de los dos anteriores).
+let contadorE25=1;
+let fibonacciL=0;
+let fibonacciH=1;
+while (contadorE25 <= 10){
+    fibonacciH=fibonacciH+fibonacciL;
+    fibonacciL=fibonacciH-fibonacciL;
+    console.log(fibonacciL);
+    contadorE25++;
+}
+
+
+
+
+
+
 // 26. Ejercicio de condicionales:
 // Escribe una función que tome una cadena como argumento y devuelva "Es un palíndromo" si la cadena es igual al revés, y "No es un palíndromo" si no lo es.
 // 27. Ejercicio de map:
@@ -407,6 +508,10 @@ console.log(numerosImpares);
 // Crea una función anónima que tome un arreglo de objetos como argumento y devuelva un nuevo arreglo con solo los objetos que tengan una propiedad `precio` mayor a 100.
 // 90. Ejercicio de funciones:
 // Crea una función llamada `contarCaracter` que tome una cadena y un carácter como argumentos, y devuelva la cantidad de veces que aparece ese carácter en la cadena.
+console.log(`
+-----------
+Siete soluciones del ejercicio 90
+------------`)
 const contarCaracter = (cadena, caracter) => {
     let contadorDeCaracteres = 0;
     let arrayCaracteres = cadena.split("");
