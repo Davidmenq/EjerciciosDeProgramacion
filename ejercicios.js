@@ -374,12 +374,46 @@ while (contadorE25 <= 10){
 }
 
 
-
-
-
-
 // 26. Ejercicio de condicionales:
 // Escribe una función que tome una cadena como argumento y devuelva "Es un palíndromo" si la cadena es igual al revés, y "No es un palíndromo" si no lo es.
+const palindromo = (cadena) => {
+    let array =  cadena.split("");//cada caracter de la cadena como elemento de un array
+    let arrayInverso = [];
+    //eliminando caracteres innecesarios
+    array = array.filter(caracter=> caracter !== ' ' && caracter !== '.' && caracter !== ',' && caracter !== ';');
+            //console.log(array);
+    //convirtiendo caracteres en mayusculas
+    const arrayMayusculas = array.map((letra) => letra.toUpperCase());
+            //console.log(arrayMayusculas);
+    //invirtiendo  elementos del arrayMayusculas en arrayInverso
+    for (i=0; i< arrayMayusculas.length; i++){
+        arrayInverso.unshift(arrayMayusculas[i]);
+    }
+            //console.log(arrayInverso);
+    //concatenando elementos para proceder con la comparacion
+    let concatenarArrayMayusculas='';
+    let concatenarArrayInverso='';
+    
+    for(i=0; i<arrayMayusculas.length; i++){
+        concatenarArrayMayusculas+=arrayMayusculas[i];
+    }
+
+    for(i=0; i<arrayInverso.length; i++){
+        concatenarArrayInverso+=arrayInverso[i];
+    }
+    //comparando cadenas y entregando respuesta
+    if(concatenarArrayMayusculas === concatenarArrayInverso){
+        console.log(`-"${cadena}" Es un palíndromo.`);
+    }else{
+        console.log(`-"${cadena}" No es un palíndromo.`);
+    }
+}
+
+palindromo('Roma ni se conoce sin oro, ni se conoce sin amor');
+palindromo('2A3*3a2');
+palindromo('Ejercicio de map:');
+
+
 // 27. Ejercicio de map:
 // Dado un arreglo de números, utiliza el método `map` para crear un nuevo arreglo que contenga el doble de cada número.
 // 28. Ejercicio de filter:
@@ -512,6 +546,7 @@ console.log(`
 -----------
 Siete soluciones del ejercicio 90
 ------------`)
+
 const contarCaracter = (cadena, caracter) => {
     let contadorDeCaracteres = 0;
     let arrayCaracteres = cadena.split("");
