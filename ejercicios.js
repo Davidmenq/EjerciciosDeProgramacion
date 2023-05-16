@@ -529,17 +529,37 @@ console.log(numerosImparesE33);
 
 // 34. Ejercicio de condicionales:
 // Escribe una función que tome dos números como argumentos y devuelva el mayor de los dos.
+const numeroMayorE34 = (primerNumero, segundoNumero) => 
+    (primerNumero-segundoNumero > 0) ? primerNumero
+    : (primerNumero-segundoNumero === 0) ? 'Los números son iguales'
+    : segundoNumero;
 
-
-
+console.log(numeroMayorE34(-25.5,-15.5));
 
 
 // 35. Ejercicio de map:
 // Dado un arreglo de palabras, utiliza el método `map` para crear un nuevo arreglo que contenga la primera letra de cada palabra.
+const palabrasE35 = ['sal', 'cena', 'Lapiz', 'vino', 'montaña', 'luna'];
+const primeraLetra = palabrasE35.map(word => word[0]);
+console.log(primeraLetra);
+
 // 36. Ejercicio de filter:
 // Dado un arreglo de números, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los números divisibles por 3.
+const arregloE36 = [1, 20, 3, 45, 5, 60, 7, 10];
+const divisiblesPorTres = arregloE36.filter(num => num%3 === 0);
+console.log(divisiblesPorTres);
+
+
 // 37. Ejercicio de reduce:
 // Dado un arreglo de palabras, utiliza el método `reduce` para concatenar todas las palabras en una sola cadena.
+const palabrasE37 = ['sal', 'cena', 'Lapiz', 'vino', 'montaña', 'luna'];
+const concatenarTodas = palabrasE37.reduce((concatenar, word) => {
+    return concatenar+= `-${word}-`;
+},0);
+console.log(concatenarTodas);
+
+
+
 // 38. Ejercicio combinado:
 // Dado un arreglo de objetos que representan estudiantes, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los estudiantes que tienen una calificación mayor a 90. Luego, utiliza el método `map` para crear un nuevo arreglo que contenga solo los nombres y calificaciones de esos estudiantes.
 // 39. Ejercicio combinado:
