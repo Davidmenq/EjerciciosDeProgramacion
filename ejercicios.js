@@ -468,20 +468,72 @@ console.log(empleadosImportantes);
 
 // 31. Ejercicio combinado:
 // Dado un arreglo de números, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los números que sean divisibles por 5 y mayores a 10. Luego, utiliza el método `reduce` para calcular la suma de los números seleccionados.
-
-
-
-
-
-
+const arregloE31 = [1, 20, 3, 45, 5, 60, 7, 10];
+const divisiblesPorCinco = arregloE31.filter(num => num%5 === 0 && num > 10);
+const sumaDeElementos = divisiblesPorCinco.reduce((sumador, num) => {
+    return sumador+=num;
+},0);
+console.log(sumaDeElementos);
 
 
 // 32. Ejercicio combinado:
 // Dado un arreglo de objetos que representan productos, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los productos en stock con un precio menor a $100. Luego, utiliza el método `reduce` para calcular el precio total de los productos seleccionados.
+const productosE32 = [
+    {
+        producto: 'bicicleta',
+        precio: 3000,
+        stock: true
+    },
+    {
+        producto: 'reflectante',
+        precio: 10,
+        stock: false
+    },
+    {
+        producto: 'Gel',
+        precio: 9.60,
+        stock: true
+    },
+    {
+        producto: 'llave hexagonal',
+        precio: 50,
+        stock: true
+    }
+]
+const enStockPrecioMenorDeCien = productosE32.filter(item => item.stock === true && item.precio<100);
+const precioTotalSeleccionados =enStockPrecioMenorDeCien.reduce((sumador, precio) => {
+    return sumador+=precio.precio;
+},0);
+console.log(`-Precio total: $${precioTotalSeleccionados} dólares`);
+
+
 // 33. Ejercicio de bucles:
 // Escribe un bucle que imprima los números impares del 1 al 50 en la consola.
+let numerosImparesE33=1;
+    // for (let i=1; i<=50; i++){
+    //     if(i%2 !== 0){
+    //         numerosImparesE33+=`| ${i} `;
+    //     }
+    // }
+
+let contadorE33 = 1;
+do {
+    if(contadorE33%2 !== 0){
+        numerosImparesE33 += `| ${contadorE33+2} `;
+    }
+    contadorE33++;
+}while(contadorE33 < 49);
+
+console.log(numerosImparesE33);
+
+
 // 34. Ejercicio de condicionales:
 // Escribe una función que tome dos números como argumentos y devuelva el mayor de los dos.
+
+
+
+
+
 // 35. Ejercicio de map:
 // Dado un arreglo de palabras, utiliza el método `map` para crear un nuevo arreglo que contenga la primera letra de cada palabra.
 // 36. Ejercicio de filter:
