@@ -416,14 +416,66 @@ palindromo('Ejercicio de map:');
 
 // 27. Ejercicio de map:
 // Dado un arreglo de números, utiliza el método `map` para crear un nuevo arreglo que contenga el doble de cada número.
+const arregloE27 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const dobleDeCadaNumero = arregloE27.map(num => num*2);
+console.log(dobleDeCadaNumero);
+
+
 // 28. Ejercicio de filter:
 // Dado un arreglo de palabras, utiliza el método `filter` para crear un nuevo arreglo que contenga solo las palabras que tengan más de 4 caracteres.
+const palabrasE28 = ['sal', 'cena', 'Lapiz', 'vino', 'montaña', 'luna'];
+const masDeCuatroCaracteres = palabrasE28.filter(word => word.length>4);
+console.log(masDeCuatroCaracteres);
+
+
 // 29. Ejercicio de reduce:
 // Dado un arreglo de números, utiliza el método `reduce` para calcular el producto de los números pares.
+const arregloE29 = [1, 2, 3, 4, 5, 6, 7, 8];
+const productoPares = arregloE29.reduce((multiplicador,num) =>{
+    let par=num%2;
+    if(par===0){
+        multiplicador*=num;
+    }
+    return multiplicador;
+},1)
+console.log(productoPares);
+
+
 // 30. Ejercicio combinado:
 // Dado un arreglo de objetos que representan empleados, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los empleados con un salario mayor a $5000. Luego, utiliza el método `map` para crear un nuevo arreglo que contenga solo los nombres de los empleados seleccionados.
+const empleados = [
+    {
+        nombre: 'David',
+        salario: 2000
+    },
+    {
+        nombre: 'Miguel',
+        salario: 10000
+    },
+    {
+        nombre: 'Anita',
+        salario: 50001
+    },
+    {
+        nombre: 'Juan Carlos',
+        salario: 4999.20
+    }
+]
+const mayorDeCincoMil = empleados.filter(sueldo => sueldo.salario > 5000);
+const empleadosImportantes = mayorDeCincoMil.map(empleado => empleado.nombre);
+console.log(empleadosImportantes);
+
+
 // 31. Ejercicio combinado:
 // Dado un arreglo de números, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los números que sean divisibles por 5 y mayores a 10. Luego, utiliza el método `reduce` para calcular la suma de los números seleccionados.
+
+
+
+
+
+
+
+
 // 32. Ejercicio combinado:
 // Dado un arreglo de objetos que representan productos, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los productos en stock con un precio menor a $100. Luego, utiliza el método `reduce` para calcular el precio total de los productos seleccionados.
 // 33. Ejercicio de bucles:
