@@ -630,34 +630,118 @@ console.log (promedioItemSeleccionados);
 
 // 41. Ejercicio de funciones:
 // Crea una función llamada `saludar` que tome un nombre como argumento y devuelva un mensaje de saludo, por ejemplo: "¡Hola, [nombre]!"
+function saludar (nombre) {
+    return `-¡Hola, ${nombre}!`;
+} 
 
-
-
-
+console.log(saludar('David'));
 
 
 // 42. Ejercicio de funciones flecha:
 // Convierte la función `saludar` en una función flecha.
+const saludar2 = nombre => `-¡Hola, ${nombre}!`;
+
+console.log(saludar2('Monica'));
+
+
 // 43. Ejercicio de funciones anónimas:
 // Crea una función anónima que tome dos números como argumentos y devuelva su suma.
+const sumaDeDosNumeros = (numero1, numero2) => numero1 + numero2;
+
+console.log (sumaDeDosNumeros(5000, 9500));  
+
+
 // 44. Ejercicio de funciones:
 // Crea una función llamada `calcularPromedio` que tome un arreglo de números como argumento y devuelva el promedio de esos números.
+const arregloE44 = [1, 20, 3, 5, 10];
+
+function calcularPromedio (arreglo){
+    let suma = arreglo.reduce((sumador,num) => {
+        return sumador+=num;
+    },0);
+
+    return suma/arreglo.length;
+}
+console.log(calcularPromedio(arregloE44));
+
+
 // 45. Ejercicio de funciones flecha:
 // Convierte la función `calcularPromedio` en una función flecha.
+const arregloE45 = [1, 20, 3, 5, 10];
+
+const calcularPromedioE45 = (arreglo) =>{
+    let suma = arreglo.reduce((sumador,num) => {
+        return sumador+=num;
+    },0);
+
+    return suma/arreglo.length;
+}
+console.log(calcularPromedioE45(arregloE45));
+
+
 // 46. Ejercicio de funciones anónimas:
 // Crea una función anónima que tome un arreglo de palabras como argumento y devuelva un nuevo arreglo con la longitud de cada palabra.
+const palabrasE46 = ['sal', 'cena', 'Lapiz', 'vino', 'montaña', 'luna'];
+
+const longitudDePalabrasE46 = function(palabras){
+    return palabras.map(palabra => palabra.length);
+}
+
+console.log(longitudDePalabrasE46(palabrasE46));
+
+
 // 47. Ejercicio de funciones:
 // Crea una función llamada `esPar` que tome un número como argumento y devuelva `true` si el número es par, y `false` si no lo es.
+function esParE47(num){
+    if(num%2 === 0){
+        return 'true';
+    }else{
+        return 'false';
+    }
+}
+
+console.log(esParE47(27));
+
+
 // 48. Ejercicio de funciones flecha:
 // Convierte la función `esPar` en una función flecha.
+const esParE48 = num => (num % 2 === 0) ? `true` : false;
+
+console.log(esParE48(16));
+
+
 // 49. Ejercicio de funciones anónimas:
 // Crea una función anónima que tome un arreglo de números como argumento y devuelva un nuevo arreglo con solo los números pares.
+const arregloE49 = [1, 20, 3, 5, 10, 2, 5, 2, 26];
+
+const soloNumerosParesE49 = (arreglo) => {
+    return arreglo.filter(num => num % 2 === 0);
+} 
+
+console.log(soloNumerosParesE49(arregloE49));
+
+
 // 50. Ejercicio de funciones:
 // Crea una función llamada `convertirAMayusculas` que tome una cadena como argumento y devuelva la cadena en mayúsculas.
+const convertirMayusculasE50 = cadena => cadena.toUpperCase(); 
+
+console.log(convertirMayusculasE50('hola amigos que gusto'));
+
 // 51. Ejercicio de funciones:
 // Crea una función llamada `sumar` que tome dos números como argumentos y devuelva la suma de esos números.
+function sumarE51 (primerNumero, segundoNumero) {
+    return primerNumero + segundoNumero;
+}
+console.log(`la suma es = ${sumarE51(25, 9)}`);
+
+
 // 52. Ejercicio de funciones flecha:
 // Convierte la función `sumar` en una función flecha.
+const sumarE52 = (primerNumero, segundoNumero) => primerNumero + segundoNumero;
+
+console.log(`la suma es = ${sumarE52(25, 9)}`);
+
+
 // 53. Ejercicio de funciones anónimas:
 // Crea una función anónima que tome un arreglo de números como argumento y devuelva la suma de todos los elementos del arreglo.
 // 54. Ejercicio de funciones:
@@ -822,6 +906,21 @@ console.log(contarCaracter7(' Hay un gatito en la casa ', ' '));
 
 // 1. Ejercicio similar al Project Euler #1:
 // Encuentra la suma de todos los números naturales múltiplos de 3 o 5 por debajo de 1000.
+let concatenar = '';
+let sumadorEU1 = 0;
+for (let i=1; i<1000; i++){
+    if(i % 3 === 0 || i % 5 === 0){
+        concatenar += `| ${i} |`;
+        sumadorEU1 += i;
+    }
+}
+
+console.log(`la suma de multiplos de 3 y 5 menores a 1000 es: ${sumadorEU1}
+---------------
+${concatenar}`);
+
+
+
 // 2. Ejercicio similar al Project Euler #6:
 // Encuentra la diferencia entre la suma de los cuadrados de los primeros 100 números naturales y el cuadrado de la suma.
 // 3. Ejercicio similar al Project Euler #7:
