@@ -555,19 +555,87 @@ console.log(divisiblesPorTres);
 const palabrasE37 = ['sal', 'cena', 'Lapiz', 'vino', 'montaña', 'luna'];
 const concatenarTodas = palabrasE37.reduce((concatenar, word) => {
     return concatenar+= `-${word}-`;
-},0);
+},'');
 console.log(concatenarTodas);
-
 
 
 // 38. Ejercicio combinado:
 // Dado un arreglo de objetos que representan estudiantes, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los estudiantes que tienen una calificación mayor a 90. Luego, utiliza el método `map` para crear un nuevo arreglo que contenga solo los nombres y calificaciones de esos estudiantes.
+const estudiantesE38 = [
+    {
+        nombre: 'David',
+        calificacion1: 100
+      },
+    {
+        nombre: 'Miguel',
+        calificacion1: 60
+    },
+    {
+        nombre: 'Anita',
+        calificacion1: 70
+     },
+    {
+        nombre: 'Juan Carlos',
+        calificacion1: 95
+    }
+]
+const mayorANoventa = estudiantesE38.filter(estudiante => estudiante.calificacion1>90);
+const calificacionesPorAlumno = mayorANoventa.map(estudiante => [estudiante.nombre, estudiante.calificacion1]);
+console.log(calificacionesPorAlumno);
+
+
 // 39. Ejercicio combinado:
 // Dado un arreglo de números, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los números positivos. Luego, utiliza el método `reduce` para calcular la suma de los números seleccionados.
+const arregloE39 = [1, -20, -3, 45, 5, -60, 7, 10];
+const numerosPositivos = arregloE39.filter(num => num>0);
+const sumaSeleccionados = numerosPositivos.reduce((sumador, num) => {
+    return sumador+=num;
+},0);
+console.log(`-La suma de los positivos es: ${sumaSeleccionados}`); 
+
+
 // 40. Ejercicio combinado:
 // Dado un arreglo de objetos que representan productos, utiliza el método `filter` para crear un nuevo arreglo que contenga solo los productos con un precio mayor a $50. Luego, utiliza el método `reduce` para calcular el promedio de los precios de los productos seleccionados.
+const productosE40 = [
+    {
+        producto: 'bicicleta',
+        precio: 3000,
+        stock: true
+    },
+    {
+        producto: 'reflectante',
+        precio: 10,
+        stock: false
+    },
+    {
+        producto: 'Gel',
+        precio: 9.60,
+        stock: true
+    },
+    {
+        producto: 'llave hexagonal',
+        precio: 52,
+        stock: true
+    }
+]
+
+const mayorDeCincuentaE40 = productosE40.filter(item => item.precio>50);
+
+const sumaItemSeleccionados = mayorDeCincuentaE40.reduce((promedio, monto)=>{
+    return promedio+=monto.precio;
+},0);
+const promedioItemSeleccionados = sumaItemSeleccionados/mayorDeCincuentaE40.length;
+console.log (promedioItemSeleccionados); 
+
+
 // 41. Ejercicio de funciones:
 // Crea una función llamada `saludar` que tome un nombre como argumento y devuelva un mensaje de saludo, por ejemplo: "¡Hola, [nombre]!"
+
+
+
+
+
+
 // 42. Ejercicio de funciones flecha:
 // Convierte la función `saludar` en una función flecha.
 // 43. Ejercicio de funciones anónimas:
